@@ -18,6 +18,10 @@ func main() {
 	complete := flag.Int("complete", 0, "complete a todo")
 	delete := flag.Int("delete", 0, "delete a todo")
 	list := flag.Bool("list", false, "list all todos")
+	deleteAll := flag.Bool("delete-all", false, "delete all todos")
+	update := flag.Int("update", 0, "update a todo")
+	message := flag.String("message", "", "message for update")
+
 	flag.Usage = help
 	flag.Parse()
 
@@ -45,18 +49,46 @@ func main() {
 
 		saveJson(todos)
 
+	case *update > 0:
+		if *message != "" {
+			err := todos.Update(*update, *message)
+			taskErr("Error in updating a todo:", err)
+
+			saveJson(todos)
+		} else {
+			fmt.Println("Please provide a message to update")
+			os.Exit(1)
+		}
+
+	case *deleteAll:
+		err := todos.DeleteAll()
+		taskErr("Error in deleting all todos:", err)
+
+		saveJson(todos)
+
 	case *list:
 		todos.Print()
 
 	default:
 		fmt.Println("No command provided")
-		help()
+		flag.Usage()	
 		os.Exit(1)
 	}
 }
 
 func help() {
-	fmt.Println("Usage: todo [command] [arguments] \n Commands: \n add \t\t Add a new todo \n complete \t Mark a todo as complete \n delete \t Delete a todo \n list \t\t List all todos")
+	text := `
+ Usage: ./todo [options] [arguments]
+  Options:
+	-add "task"					Add a new todo
+	-complete [todo no]				Complete a todo
+	-delete [todo no]				Delete a todo
+	-update [todo no] -message "message"		Update a todo
+	-delete-all					Delete all todos
+	-list						List all todos
+	-help						Show this help
+`
+	fmt.Println(text)
 }
 
 // This function is used to save the todos to a json file

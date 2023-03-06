@@ -132,6 +132,24 @@ func (t *Todos) Print() {
 
 }
 
+func (t *Todos) Update(todoNum int, task string) error {
+	ls := *t
+	if todoNum <= 0 || todoNum > len(ls) {
+		return errors.New("index out of range")
+	}
+
+	index := todoNum - 1 // convert to zero-based index
+	ls[index].Task = task
+	return nil
+}
+
+func (t *Todos) DeleteAll() error {
+
+	*t = (*t)[:0]
+
+	return nil
+}
+
 func GetInput(arg ...string) (string, error) {
 	if len(arg) > 0 {
 		return strings.Join(arg, " "), nil
