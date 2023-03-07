@@ -48,7 +48,7 @@ We can perform task like add, delete, update and list tasks. We can also delete 
 	-add "task"					            Add a new task
 	-complete [task no]				        Complete a task
 	-delete [task no]				        Delete a task
-	-update [task no] -message "message"	Update a task
+	-update [task no] -message "message"			Update a task
 	-delete-all					            Delete all tasks
 	-list						            List all tasks
 	-help						            Show this help
