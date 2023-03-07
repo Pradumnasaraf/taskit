@@ -5,7 +5,20 @@ It is a simple task manager that allows you to create, edit, delete and list tas
 ![taskit demo gif](https://user-images.githubusercontent.com/51878265/223354705-ca2fa9c9-b054-450e-9a0b-60751c3f8ee1.gif)
 
 
-### Installation
+### ⭐️ Features
+
+- Adding tasks
+- Deleting a task 
+- Updating tasks
+- Completing tasks
+- Deleting all tasks
+- Listing all tasks
+
+### ❗️ Prerequisites
+
+- Have Go installed on your machine and have basic knowledge.
+
+### ⚙️ Installation
 
 First, we need to install all the external dependencies:
 
@@ -25,7 +38,7 @@ Finally we can run the executable:
 ./taskit
 ```
 
-### Usage
+### 📝 Usage
 
 We can perform task like add, delete, update and list tasks. We can also delete all tasks.
 
@@ -41,6 +54,6 @@ We can perform task like add, delete, update and list tasks. We can also delete 
 	-help						            Show this help
 ```
 
-### License
+### 📜 License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
