@@ -1,4 +1,4 @@
-package todo
+package task
 
 import (
 	"encoding/json"
@@ -18,26 +18,26 @@ type item struct {
 	CompletedOn string
 }
 
-type Todos []item
+type Tasks []item
 
-func (t *Todos) Add(task string) { //  ()
-	todo := item{
+func (t *Tasks) Add(task string) {
+	Task := item{
 		Task:        task,
 		Done:        false,
 		CreatedOn:   time.Now().Format("02 Jan 2006 15:04:05"),
 		CompletedOn: "----",
 	}
 
-	*t = append(*t, todo)
+	*t = append(*t, Task)
 }
 
-func (t *Todos) Complete(todoNum int) error {
+func (t *Tasks) Complete(taskNum int) error {
 	ls := *t // dereference the pointer to the slice of struct
-	if todoNum <= 0 || todoNum > len(ls) {
+	if taskNum <= 0 || taskNum > len(ls) {
 		return errors.New("index out of range")
 	}
 
-	index := todoNum - 1 // convert to zero-based index
+	index := taskNum - 1 // convert to zero-based index
 
 	ls[index].Done = true
 	ls[index].CompletedOn = time.Now().Format("02 Jan 2006 15:04:05")
@@ -45,19 +45,19 @@ func (t *Todos) Complete(todoNum int) error {
 
 }
 
-func (t *Todos) Delete(todoNum int) error {
+func (t *Tasks) Delete(taskNum int) error {
 	ls := *t
-	if todoNum <= 0 || todoNum > len(ls) {
+	if taskNum <= 0 || taskNum > len(ls) {
 		return errors.New("index out of range")
 	}
 
-	index := todoNum - 1 // convert to zero-based index
+	index := taskNum - 1 // convert to zero-based index
 
 	*t = append(ls[:index], ls[index+1:]...)
 	return nil
 }
 
-func (t *Todos) Load(filenme string) error {
+func (t *Tasks) Load(filenme string) error {
 
 	file, err := os.ReadFile(filenme)
 	if err != nil {
@@ -79,7 +79,7 @@ func (t *Todos) Load(filenme string) error {
 	return nil
 }
 
-func (t *Todos) Save(filename string) error {
+func (t *Tasks) Save(filename string) error {
 
 	data, err := json.Marshal(t)
 	if err != nil {
@@ -88,7 +88,7 @@ func (t *Todos) Save(filename string) error {
 	return os.WriteFile(filename, data, 0644)
 }
 
-func (t *Todos) Print() {
+func (t *Tasks) Print() {
 
 	table := simpletable.New()
 	table.Header = &simpletable.Header{
@@ -132,18 +132,18 @@ func (t *Todos) Print() {
 
 }
 
-func (t *Todos) Update(todoNum int, task string) error {
+func (t *Tasks) Update(taskNum int, task string) error {
 	ls := *t
-	if todoNum <= 0 || todoNum > len(ls) {
+	if taskNum <= 0 || taskNum > len(ls) {
 		return errors.New("index out of range")
 	}
 
-	index := todoNum - 1 // convert to zero-based index
+	index := taskNum - 1 // convert to zero-based index
 	ls[index].Task = task
 	return nil
 }
 
-func (t *Todos) DeleteAll() error {
+func (t *Tasks) DeleteAll() error {
 
 	*t = (*t)[:0]
 
@@ -158,7 +158,7 @@ func GetInput(arg ...string) (string, error) {
 	return "", errors.New("no input provided")
 }
 
-func (t *Todos) CountPending() int {
+func (t *Tasks) CountPending() int {
 	var pending int
 	for _, item := range *t {
 		if !item.Done {

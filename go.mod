@@ -1,4 +1,4 @@
-module github.com/Pradumnasaraf/Go-todo-CLI
+module github.com/Pradumnasaraf/TaskIt
 
 go 1.20
 
