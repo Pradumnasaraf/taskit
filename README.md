@@ -2,6 +2,9 @@
 
 It is a simple task manager that allows you to create, edit, delete and list tasks from the command line. It is build with Go.
 
+![taskit demo gif](https://user-images.githubusercontent.com/51878265/223354705-ca2fa9c9-b054-450e-9a0b-60751c3f8ee1.gif)
+
+
 ### Installation
 
 First, we need to install all the external dependencies:
