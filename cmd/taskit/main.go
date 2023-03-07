@@ -50,9 +50,8 @@ func main() {
 		saveJson(tasks)
 
 	case *update > 0:
-		task, err := task.GetInput(flag.Args()...)
-		taskErr("Error in adding task:", err)
-		if task != "" {
+
+		if *message != "" {
 			err := tasks.Update(*update, *message)
 			taskErr("Error in updating a task:", err)
 

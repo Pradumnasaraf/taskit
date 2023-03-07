@@ -105,8 +105,8 @@ func (t *Tasks) Print() {
 
 	for index, items := range *t {
 		itemNum := index + 1
-		task := blue(items.Task)
-		done := blue("No")
+		task := purple(items.Task)
+		done := red("No")
 		if items.Done {
 			task = green(fmt.Sprintf("%s \u2705", items.Task))
 			done = green("Yes")

@@ -49,17 +49,17 @@ You can also use Gitpod to run this project. Gitpod is a free online IDE that al
 
 We can perform tasks like add, delete, update and list tasks. We can also delete all tasks.
 
-```bash
+```
  Usage: ./task [options] [arguments]
   Options:
 	-add "task"					     Add a new task
 	-complete [task no]				     Complete a task
 	-delete [task no]				     Delete a task
-	-update [task no] -message "message"	             Update a task
+	-update [task no] -message "message"	             Update a task (The message should be in double quotes)
 	-delete-all					     Delete all tasks
 	-list						     List all tasks
 	-help						     Show this help
-```
+``` 
 
 ### 📜 License
 
