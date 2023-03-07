@@ -20,6 +20,8 @@ It is a simple task manager that allows you to create, edit, delete and list tas
 
 ### ⚙️ Installation
 
+#### Local
+
 First, we need to install all the external dependencies:
 
 ```bash
@@ -31,6 +33,8 @@ Then, we need to build the binary:
 ```bash
 go build ./cmd/taskit
 ```
+
+#### Gitpod
 
 Finally we can run the executable:
 
