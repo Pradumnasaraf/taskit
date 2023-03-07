@@ -1,9 +1,8 @@
 ## TaskIt
 
-It is a simple task manager that allows you to create, edit, delete and list tasks from the command line. It is build with Go.
+It is a simple task manager that allows you to create, edit, delete and list tasks from the command line. It is built with Go.
 
 ![taskit demo gif](https://user-images.githubusercontent.com/51878265/223354705-ca2fa9c9-b054-450e-9a0b-60751c3f8ee1.gif)
-
 
 ### ⭐️ Features
 
@@ -16,7 +15,7 @@ It is a simple task manager that allows you to create, edit, delete and list tas
 
 ### ❗️ Prerequisites
 
-- Have Go installed on your machine and have basic knowledge.
+- Have Go installed on your machine and have the basic knowledge.
 
 ### ⚙️ Installation
 
@@ -34,7 +33,7 @@ Then, we need to build the binary:
 go build ./cmd/taskit
 ```
 
-Finally we can run the executable:
+Finally, we can run the executable:
 
 ```bash
 ./taskit
@@ -48,7 +47,7 @@ You can also use Gitpod to run this project. Gitpod is a free online IDE that al
 
 ### 📝 Usage
 
-We can perform task like add, delete, update and list tasks. We can also delete all tasks.
+We can perform tasks like add, delete, update and list tasks. We can also delete all tasks.
 
 ```bash
  Usage: ./task [options] [arguments]
