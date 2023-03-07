@@ -64,3 +64,7 @@ We can perform tasks like add, delete, update and list tasks. We can also delete
 ### 📜 License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
+
+### 🛡 Security
+
+If you discover a security vulnerability within this project, please check the [SECURITY](SECURITY.md) for more information.
