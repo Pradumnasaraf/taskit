@@ -1,8 +1,7 @@
 package task
 
 import (
-	"fmt"
-
+	"github.com/Pradumnasaraf/taskit/handlers"
 	"github.com/spf13/cobra"
 )
 
@@ -11,7 +10,11 @@ var ListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List all tasks",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("list called")
+		tasks := &handlers.Tasks{}
+		err := tasks.Load(taskFile)
+		throwErr(err)
+
+		err = tasks.List()
+		throwErr(err)
 	},
 }
-

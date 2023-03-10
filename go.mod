@@ -1,4 +1,4 @@
-module github.com/Pradumnasaraf/TaskIt
+module github.com/Pradumnasaraf/taskit
 
 go 1.20
 
