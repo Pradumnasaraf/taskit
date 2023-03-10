@@ -1,4 +1,4 @@
-package task
+package handlers
 
 import (
 	"encoding/json"
@@ -20,7 +20,7 @@ type item struct {
 
 type Tasks []item
 
-func (t *Tasks) Add(task string) {
+func (t *Tasks) Add(task string) error {
 	Task := item{
 		Task:        task,
 		Done:        false,
@@ -29,9 +29,10 @@ func (t *Tasks) Add(task string) {
 	}
 
 	*t = append(*t, Task)
+	return nil
 }
 
-func (t *Tasks) Complete(taskNum int) error {
+func (t *Tasks) Done(taskNum int) error {
 	ls := *t // dereference the pointer to the slice of struct
 	if taskNum <= 0 || taskNum > len(ls) {
 		return errors.New("index out of range")
@@ -88,7 +89,7 @@ func (t *Tasks) Save(filename string) error {
 	return os.WriteFile(filename, data, 0644)
 }
 
-func (t *Tasks) Print() {
+func (t *Tasks) List() error {
 
 	table := simpletable.New()
 	table.Header = &simpletable.Header{
@@ -106,7 +107,7 @@ func (t *Tasks) Print() {
 	for index, items := range *t {
 		itemNum := index + 1
 		task := purple(items.Task)
-		done := red("No")
+		done := purple("No")
 		if items.Done {
 			task = green(fmt.Sprintf("%s \u2705", items.Task))
 			done = green("Yes")
@@ -130,6 +131,7 @@ func (t *Tasks) Print() {
 	table.SetStyle(simpletable.StyleUnicode)
 	fmt.Println(table.String())
 
+	return nil
 }
 
 func (t *Tasks) Update(taskNum int, task string) error {
