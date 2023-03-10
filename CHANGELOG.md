@@ -1,0 +1,30 @@
+# [0.1.0](https://github.com/Pradumnasaraf/taskit/compare/v0.1.1...v0.1.0) (2023-03-10)
+
+
+* BREAKING CHANGE: v1 (#2) ([6e40027](https://github.com/Pradumnasaraf/taskit/commit/6e40027da8f6ddc525aa82d916a0619cfe24f57e)), closes [#2](https://github.com/Pradumnasaraf/taskit/issues/2)
+
+
+### Bug Fixes
+
+* function working ([075f20f](https://github.com/Pradumnasaraf/taskit/commit/075f20f1d9e43195df542165b4f446855bc5c50b))
+
+
+### BREAKING CHANGES
+
+* feat: Add logic for different subcommands
+chore: remove binary
+docs: Update README.md
+ci: add releases workflow
+
+
+
+## [0.1.1](https://github.com/Pradumnasaraf/taskit/compare/c74a1f1fee520e7db708269ce2fbf66d5df00f9b...v0.1.1) (2023-03-07)
+
+
+### Features
+
+* Add CI and supporting files ([d62aea9](https://github.com/Pradumnasaraf/taskit/commit/d62aea96c565d94e8bbcb2318585e12fdbc580a2))
+* Add initial files ([c74a1f1](https://github.com/Pradumnasaraf/taskit/commit/c74a1f1fee520e7db708269ce2fbf66d5df00f9b))
+
+
+
