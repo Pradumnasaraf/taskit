@@ -107,7 +107,7 @@ func (t *Tasks) List() error {
 	for index, items := range *t {
 		itemNum := index + 1
 		task := purple(items.Task)
-		done := red("No")
+		done := purple("No")
 		if items.Done {
 			task = green(fmt.Sprintf("%s \u2705", items.Task))
 			done = green("Yes")

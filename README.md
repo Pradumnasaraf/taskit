@@ -2,7 +2,7 @@
 
 It is a simple task manager that allows you to create, edit, delete and list tasks from the command line. It is built with Go and Cobra.
 
-![TaskIt demo GIF](https://user-images.githubusercontent.com/51878265/224398202-84823ca4-ba4d-4ae4-915a-9f9f42ee50d0.gif)
+![taskit demo gif](https://user-images.githubusercontent.com/51878265/223354705-ca2fa9c9-b054-450e-9a0b-60751c3f8ee1.gif)
 
 ### ⭐️ Features
 
@@ -49,14 +49,16 @@ You can also use Gitpod to run this project. Gitpod is a free online IDE that al
 
 We can perform tasks like add, delete, update and list tasks. We can also delete all tasks.
 
-```
+**Note**: When you add task for the 1st time it will create a `tasks.json` file and all the commands will update chnages to that only. So even to you exit the terminal and come back again, the tasks will be there.
+
+```s
 Usage:
   taskit [flags]
   taskit [command]
 
 Available Commands:
   add         Add a new task
-  delete      Delete a task
+  delete      Delete a task by ID
   deleteall   Delete all tasks
   done        Mark a task as done
   help        Help about any command

@@ -15,7 +15,7 @@ var (
 // deleteCmd represents the delete command
 var DeleteCmd = &cobra.Command{
 	Use:   "delete",
-	Short: "Delete a task",
+	Short: "Delete a task by ID",
 	Run: func(cmd *cobra.Command, args []string) {
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)
