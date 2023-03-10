@@ -3,7 +3,9 @@ tasks:
     init: 
       go mod download
     command: | 
-      go build ./cmd/taskit
+      go build .
+      ./taskit
+
 
 github:
   prebuilds:
