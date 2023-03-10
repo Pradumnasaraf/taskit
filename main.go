@@ -1,3 +1,15 @@
+/*
+Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+*/
+package main
+
+import "github.com/Pradumnasaraf/TaskIt/cmd"
+
+func main() {
+	cmd.Execute()
+}
+
+/*
 package main
 
 import (
@@ -108,3 +120,7 @@ func taskErr(errMsg string, err error) {
 		os.Exit(1)
 	}
 }
+
+
+
+*/
