@@ -1,4 +1,13 @@
-# [0.1.0](https://github.com/Pradumnasaraf/taskit/compare/v0.1.1...v0.1.0) (2023-03-10)
+## [1.0.1](https://github.com/Pradumnasaraf/taskit/compare/v1.0.0...v1.0.1) (2023-03-11)
+
+
+### Bug Fixes
+
+* remove deprecated and minor changes ([b003631](https://github.com/Pradumnasaraf/taskit/commit/b003631f8c5c2a52d285eef9c78b9f1bedf0c6bc))
+
+
+
+# [1.0.0](https://github.com/Pradumnasaraf/taskit/compare/v0.1.1...v1.0.0) (2023-03-10)
 
 
 * BREAKING CHANGE: v1 (#2) ([6e40027](https://github.com/Pradumnasaraf/taskit/commit/6e40027da8f6ddc525aa82d916a0619cfe24f57e)), closes [#2](https://github.com/Pradumnasaraf/taskit/issues/2)
