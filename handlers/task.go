@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"strings"
 	"time"
 
 	"github.com/alexeyco/simpletable"
@@ -125,7 +124,7 @@ func (t *Tasks) List() error {
 	table.Body = &simpletable.Body{Cells: cells}
 
 	table.Footer = &simpletable.Footer{Cells: []*simpletable.Cell{
-		{Align: simpletable.AlignCenter, Span: 5, Text: red(fmt.Sprintf("You have %d pending tasks", t.CountPending()))},
+		{Align: simpletable.AlignCenter, Span: 5, Text: red(fmt.Sprintf("You have %d pending tasks", t.countPending()))},
 	}}
 
 	table.SetStyle(simpletable.StyleUnicode)
@@ -152,15 +151,7 @@ func (t *Tasks) DeleteAll() error {
 	return nil
 }
 
-func GetInput(arg ...string) (string, error) {
-	if len(arg) > 0 {
-		return strings.Join(arg, " "), nil
-	}
-
-	return "", errors.New("no input provided")
-}
-
-func (t *Tasks) CountPending() int {
+func (t *Tasks) countPending() int {
 	var pending int
 	for _, item := range *t {
 		if !item.Done {

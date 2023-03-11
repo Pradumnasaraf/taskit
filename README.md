@@ -51,10 +51,10 @@ We can perform tasks like add, delete, update and list tasks. We can also delete
 
 **Note**: When you add task for the 1st time it will create a `tasks.json` file and all the commands will update chnages to that only. So even to you exit the terminal and come back again, the tasks will be there.
 
-```s
+```
 Usage:
-  taskit [flags]
-  taskit [command]
+  ./taskit [flags]
+  ./taskit [command]
 
 Available Commands:
   add         Add a new task
