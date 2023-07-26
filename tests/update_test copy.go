@@ -8,7 +8,7 @@ import (
 	"github.com/magiconair/properties/assert"
 )
 
-// TestRootCmd tests the root command (scrapy)
+// TestUpdateCmd tests the update command
 func TestUpdateCmd(t *testing.T) {
 
 	expectedOutput := "Task updated successfully"

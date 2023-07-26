@@ -8,7 +8,7 @@ import (
 	"github.com/magiconair/properties/assert"
 )
 
-// TestRootCmd tests the root command (scrapy)
+// TestDeleteAllCmd tests the deleteall command
 func TestDeleteAllCmd(t *testing.T) {
 
 	expectedOutput := "All tasks deleted successfully"

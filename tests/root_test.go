@@ -8,7 +8,7 @@ import (
 	"github.com/magiconair/properties/assert"
 )
 
-// TestRootCmd tests the root command (scrapy)
+// TestRootCmd tests the root command (taskit)
 func TestRootCmd(t *testing.T) {
 
 	expectedOutput := "A CLI tool to manage your tasks"
@@ -25,7 +25,7 @@ func TestRootCmd(t *testing.T) {
 	assert.Equal(t, got, expectedOutput)
 }
 
-// TestRootCmdHelpFlag tests the root command (scrapy) with the help flag
+// TestRootCmdHelpFlag tests the root command (taskit) with the help flag
 func TestRootCmdHelpFlag(t *testing.T) {
 
 	expectedOutput := "A CLI tool to manage your tasks"
