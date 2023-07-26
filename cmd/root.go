@@ -12,7 +12,10 @@ var rootCmd = &cobra.Command{
 	Use:   "taskit",
 	Short: "A CLI tool to manage your tasks",
 	Run: func(cmd *cobra.Command, args []string) {
-		cmd.Help()
+		err := cmd.Help()
+		if err != nil {
+			os.Exit(1)
+		}
 	},
 }
 
