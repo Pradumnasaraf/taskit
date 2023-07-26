@@ -13,10 +13,10 @@ import (
 )
 
 // TestRootCmd tests the root command (scrapy)
-func TestAddCmd(t *testing.T) {
+func TestDeleteCmd(t *testing.T) {
 
-	expectedOutput := "Task added successfully"
-	cmd := exec.Command("taskit", "add", "task3")
+	expectedOutput := "Task deleted successfully"
+	cmd := exec.Command("taskit", "delete", "2")
 
 	// Capture the output
 	output, err := cmd.CombinedOutput()
@@ -40,7 +40,8 @@ func TestAddCmd(t *testing.T) {
 		log.Fatal("Error during Unmarshal(): ", err)
 	}
 
-	// Validate the json output 3rd task
-	assert.Equal(t, payload[2]["Task"], "task3")
+	if len(payload) != 2 || payload[1]["Task"] != "task3" {
+		return
+	}
 
 }

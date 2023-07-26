@@ -16,7 +16,7 @@ import (
 func TestUpdateCmd(t *testing.T) {
 
 	expectedOutput := "Task updated successfully"
-	cmd := exec.Command("taskit", "update", "2", "update-task")
+	cmd := exec.Command("taskit", "update", "1", "update-task")
 
 	// Capture the output
 	output, err := cmd.CombinedOutput()
@@ -40,6 +40,6 @@ func TestUpdateCmd(t *testing.T) {
 		log.Fatal("Error during Unmarshal(): ", err)
 	}
 
-	assert.Equal(t, payload[1]["Task"], "update-task")
+	assert.Equal(t, payload[0]["Task"], "update-task")
 
 }
