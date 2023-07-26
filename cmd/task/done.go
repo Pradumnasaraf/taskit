@@ -10,7 +10,7 @@ import (
 
 // doneCmd represents the done command
 var DoneCmd = &cobra.Command{
-	Use:   "done",
+	Use:   "done [task ID]",
 	Short: "Mark a task as done",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {

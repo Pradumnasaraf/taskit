@@ -14,7 +14,7 @@ var (
 
 // addCmd represents the add command
 var AddCmd = &cobra.Command{
-	Use:   "add",
+	Use:   "add [task]",
 	Short: "Add a new task",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {

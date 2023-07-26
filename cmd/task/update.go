@@ -10,7 +10,7 @@ import (
 
 // updateCmd represents the update command
 var UpdateCmd = &cobra.Command{
-	Use:   "update",
+	Use:   "update [task ID] [message]",
 	Short: "Update a task by ID",
 	Args:  cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
