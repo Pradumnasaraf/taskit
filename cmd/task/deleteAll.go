@@ -1,7 +1,7 @@
 package task
 
 import (
-	"log"
+	"fmt"
 
 	"github.com/Pradumnasaraf/taskit/handlers"
 	"github.com/spf13/cobra"
@@ -15,14 +15,14 @@ var DeleteAllCmd = &cobra.Command{
 
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
 		err = tasks.DeleteAll()
-		throwErr(err)
+		checkNilErr(err)
 
 		err = tasks.Save(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
-		log.Println("All tasks deleted successfully")
+		fmt.Println("All tasks deleted successfully")
 	},
 }

@@ -1,43 +1,38 @@
 package task
 
 import (
-	"errors"
-	"log"
+	"fmt"
+	"strconv"
 
 	"github.com/Pradumnasaraf/taskit/handlers"
 	"github.com/spf13/cobra"
-)
-
-var (
-	doneTaskID int
 )
 
 // doneCmd represents the done command
 var DoneCmd = &cobra.Command{
 	Use:   "done",
 	Short: "Mark a task as done",
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
-		if doneTaskID <= 0 {
-			throwErr(errors.New("task ID cannot be less than or equal to zero"))
+		doneTaskID := args[0]
+		convertedString, err := strconv.Atoi(doneTaskID)
+		if err != nil {
+			fmt.Println("Please enter a valid task ID")
+			return
 		}
 
-		err = tasks.Done(doneTaskID)
-		throwErr(err)
+		err = tasks.Done(convertedString)
+		checkNilErr(err)
 
 		err = tasks.Save(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
-		log.Println("Task marked as done successfully")
+		fmt.Println("Task marked as done successfully")
 
 	},
-}
-
-func init() {
-	DoneCmd.Flags().IntVarP(&doneTaskID, "id", "i", 0, "The ID of the task to be marked as done")
-	DoneCmd.MarkFlagRequired("id")
 }

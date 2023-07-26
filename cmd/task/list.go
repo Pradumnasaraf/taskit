@@ -12,9 +12,9 @@ var ListCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
 		err = tasks.List()
-		throwErr(err)
+		checkNilErr(err)
 	},
 }
