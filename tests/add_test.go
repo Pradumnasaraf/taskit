@@ -3,8 +3,8 @@ package test
 import (
 	"encoding/json"
 	"fmt"
-	"os"
 	"log"
+	"os"
 	"os/exec"
 	"strings"
 	"testing"
