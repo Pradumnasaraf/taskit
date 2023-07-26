@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/Pradumnasaraf/taskit/compare/v1.0.2...v1.1.0) (2023-07-26)
+
+
+### Features
+
+* Add Unit tests ([#5](https://github.com/Pradumnasaraf/taskit/issues/5)) ([4da73fb](https://github.com/Pradumnasaraf/taskit/commit/4da73fb4e19e15684002a742a4167e2f119146f4))
+
+
+
 ## [1.0.2](https://github.com/Pradumnasaraf/taskit/compare/v1.0.1...v1.0.2) (2023-07-26)
 
 
