@@ -3,7 +3,7 @@ package test
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"log"
 	"os/exec"
 	"strings"
@@ -29,7 +29,7 @@ func TestAddCmd(t *testing.T) {
 	assert.Equal(t, got, expectedOutput)
 
 	// Validate the json output
-	content, err := ioutil.ReadFile("tasks.json")
+	content, err := os.ReadFile("tasks.json")
 	if err != nil {
 		fmt.Print("Error:", err)
 	}
