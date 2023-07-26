@@ -18,7 +18,7 @@ var AddCmd = &cobra.Command{
 	Short: "Add a new task",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		
+
 		// Load the tasks from the file
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)

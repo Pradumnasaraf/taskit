@@ -14,7 +14,7 @@ var DeleteCmd = &cobra.Command{
 	Short: "Delete a task by ID",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		
+
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)
 		checkNilErr(err)
