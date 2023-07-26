@@ -13,10 +13,10 @@ import (
 )
 
 // TestRootCmd tests the root command (scrapy)
-func TestAddCmd(t *testing.T) {
+func TestUpdateCmd(t *testing.T) {
 
-	expectedOutput := "Task added successfully"
-	cmd := exec.Command("taskit", "add", "task1")
+	expectedOutput := "Task updated successfully"
+	cmd := exec.Command("taskit", "update", "2", "update-task")
 
 	// Capture the output
 	output, err := cmd.CombinedOutput()
@@ -40,6 +40,6 @@ func TestAddCmd(t *testing.T) {
 		log.Fatal("Error during Unmarshal(): ", err)
 	}
 
-	assert.Equal(t, payload[1]["Task"], "task1")
+	assert.Equal(t, payload[1]["Task"], "update-task")
 
 }
