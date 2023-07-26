@@ -38,9 +38,3 @@ var UpdateCmd = &cobra.Command{
 
 	},
 }
-
-func init() {
-
-	UpdateCmd.Flags().StringVarP(&message, "message", "m", "", "The message to be updated (Message should be in double quotes)")
-	UpdateCmd.MarkFlagRequired("message")
-}
