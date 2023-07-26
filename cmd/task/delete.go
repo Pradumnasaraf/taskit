@@ -1,41 +1,37 @@
 package task
 
 import (
-	"errors"
-	"log"
+	"fmt"
+	"strconv"
 
 	"github.com/Pradumnasaraf/taskit/handlers"
 	"github.com/spf13/cobra"
 )
 
-var (
-	deleteTaskID int
-)
-
 // deleteCmd represents the delete command
 var DeleteCmd = &cobra.Command{
-	Use:   "delete",
+	Use:   "delete [task ID]",
 	Short: "Delete a task by ID",
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
+
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
-		if deleteTaskID <= 0 {
-			throwErr(errors.New("task ID cannot be less than or equal to zero"))
+		deleteTaskID := args[0]
+		convertedString, err := strconv.Atoi(deleteTaskID)
+		if err != nil {
+			fmt.Println("Please enter a valid task ID")
+			return
 		}
 
-		err = tasks.Delete(deleteTaskID)
-		throwErr(err)
+		err = tasks.Delete(convertedString)
+		checkNilErr(err)
 
 		err = tasks.Save(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
-		log.Println("Task deleted successfully")
+		fmt.Println("Task deleted successfully")
 	},
-}
-
-func init() {
-	DeleteCmd.Flags().IntVarP(&deleteTaskID, "id", "i", 0, "The ID of the task to be deleted")
-	DeleteCmd.MarkFlagRequired("id")
 }

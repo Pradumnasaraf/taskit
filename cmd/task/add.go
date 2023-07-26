@@ -1,7 +1,7 @@
 package task
 
 import (
-	"errors"
+	"fmt"
 	"log"
 
 	"github.com/Pradumnasaraf/taskit/handlers"
@@ -9,40 +9,33 @@ import (
 )
 
 var (
-	taskName string
 	taskFile string = "tasks.json"
 )
 
 // addCmd represents the add command
 var AddCmd = &cobra.Command{
-	Use:   "add",
+	Use:   "add [task]",
 	Short: "Add a new task",
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
+
+		// Load the tasks from the file
 		tasks := &handlers.Tasks{}
 		err := tasks.Load(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
-		if taskName == "" {
-			throwErr(errors.New("task name cannot be empty"))
-		}
-
-		err = tasks.Add(taskName)
-		throwErr(err)
+		err = tasks.Add(args[0])
+		checkNilErr(err)
 
 		err = tasks.Save(taskFile)
-		throwErr(err)
+		checkNilErr(err)
 
-		log.Println("Task added successfully")
+		fmt.Println("Task added successfully")
 	},
 }
 
-func init() {
-	AddCmd.Flags().StringVarP(&taskName, "name", "n", "", "The name of the task (Name should be in double quotes)")
-	AddCmd.MarkFlagRequired("name")
-}
-
-// throwErr is a helper function to throw an error
-func throwErr(err error) {
+// checkNilErr is a helper function to throw an error
+func checkNilErr(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
