@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/alexeyco/simpletable v1.0.0
+	github.com/magiconair/properties v1.8.7
 	github.com/spf13/cobra v1.6.1
 )
 
