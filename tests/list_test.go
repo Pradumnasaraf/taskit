@@ -7,7 +7,7 @@ import (
 
 	"github.com/magiconair/properties/assert"
 )
-//
+
 func TestListCmd(t *testing.T) {
 
 	expectedOutput := `╔══`
