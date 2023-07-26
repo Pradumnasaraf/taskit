@@ -4,9 +4,9 @@ import "fmt"
 
 const (
 	ColorDefault = "\x1b[39m"
-	ColorRed    = "\x1b[91m"
-	ColorGreen  = "\x1b[32m"
-	ColorPurple = "\x1b[35m"
+	ColorRed     = "\x1b[91m"
+	ColorGreen   = "\x1b[32m"
+	ColorPurple  = "\x1b[35m"
 )
 
 func red(s string) string {
