@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/Pradumnasaraf/taskit/compare/v1.0.1...v1.0.2) (2023-07-26)
+
+
+### Bug Fixes
+
+* Improve the code ([#4](https://github.com/Pradumnasaraf/taskit/issues/4)) ([f40c7c7](https://github.com/Pradumnasaraf/taskit/commit/f40c7c7c6e0511bfedde762c22d5971a4957cb15))
+
+
+
 ## [1.0.1](https://github.com/Pradumnasaraf/taskit/compare/v1.0.0...v1.0.1) (2023-03-11)
 
 
