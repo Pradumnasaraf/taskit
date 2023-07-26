@@ -1,10 +1,6 @@
 package test
 
 import (
-	"encoding/json"
-	"fmt"
-	"log"
-	"os"
 	"os/exec"
 	"strings"
 	"testing"
@@ -12,7 +8,7 @@ import (
 	"github.com/magiconair/properties/assert"
 )
 
-// TestRootCmd tests the root command (scrapy)
+// TestAddCmd tests the add command
 func TestAddCmd(t *testing.T) {
 
 	expectedOutput := "Task added successfully"
@@ -29,16 +25,7 @@ func TestAddCmd(t *testing.T) {
 	assert.Equal(t, got, expectedOutput)
 
 	// Validate the json output
-	content, err := os.ReadFile("tasks.json")
-	if err != nil {
-		fmt.Print("Error:", err)
-	}
-
-	var payload []map[string]interface{}
-	err = json.Unmarshal(content, &payload)
-	if err != nil {
-		log.Fatal("Error during Unmarshal(): ", err)
-	}
+	payload := ReadTasks()
 
 	// Validate the json output 3rd task
 	assert.Equal(t, payload[2]["Task"], "task3")

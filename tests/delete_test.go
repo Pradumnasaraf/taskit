@@ -1,10 +1,6 @@
 package test
 
 import (
-	"encoding/json"
-	"fmt"
-	"log"
-	"os"
 	"os/exec"
 	"strings"
 	"testing"
@@ -29,16 +25,7 @@ func TestDeleteCmd(t *testing.T) {
 	assert.Equal(t, got, expectedOutput)
 
 	// Validate the json output
-	content, err := os.ReadFile("tasks.json")
-	if err != nil {
-		fmt.Print("Error:", err)
-	}
-
-	var payload []map[string]interface{}
-	err = json.Unmarshal(content, &payload)
-	if err != nil {
-		log.Fatal("Error during Unmarshal(): ", err)
-	}
+	payload := ReadTasks()
 
 	if len(payload) != 2 || payload[1]["Task"] != "task3" {
 		return
