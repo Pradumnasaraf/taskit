@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Setup Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v7
         with:
-          go-version: 1.19
+          go-version-file: go.mod
 
       - name: Clear the test cache
         run: go clean -testcache
@@ -26,4 +26,4 @@ jobs:
         run: go install
 
       - name: Run Tests
-        run: go test -v ./tests/... 
+        run: go test -v ./tests/...
