@@ -39,12 +39,6 @@ Finally, we can run the executable:
 ./taskit
 ```
 
-#### Gitpod
-
-You can also use Gitpod to run this project. Gitpod is a free online IDE that allows you to run this project in the cloud. Click the button below to open this project in Gitpod:
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Pradumnasaraf/taskit)
-
 ### 📝 Usage
 
 We can perform tasks like add, delete, update and list tasks. We can also delete all tasks.
