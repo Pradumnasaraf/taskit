@@ -3,7 +3,7 @@ module github.com/Pradumnasaraf/taskit
 go 1.23
 
 require (
-	github.com/alexeyco/simpletable v1.2.0
+	github.com/alexeyco/simpletable v1.2.1
 	github.com/magiconair/properties v1.18.13
 	github.com/spf13/cobra v1.10.2
 )
